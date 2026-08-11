@@ -3,6 +3,10 @@ import torch.nn as nn
 
 
 class SelfAttentionV1(nn.Module):
+    """
+    Simple implementation of the self-attention mechanism.
+    Allows for trainable attention weights.
+    """
     def __init__(self, d_input, d_output):
         super().__init__()
         self.W_query = nn.Parameter(torch.rand(d_input, d_output))

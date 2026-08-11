@@ -3,6 +3,11 @@ import torch.nn as nn
 
 
 class SelfAttentionV2(nn.Module):
+    """
+    Simple implementation of the self-attention mechanism.
+    Allows for trainable attention weights.
+    Linear layers use a more sophisticated weight initialization scheme that is more efficient than the layers in V1.
+    """
     def __init__(self, d_input, d_output, qkv_bias=False):
         super().__init__()
         self.W_query = nn.Linear(d_input, d_output, bias=qkv_bias)

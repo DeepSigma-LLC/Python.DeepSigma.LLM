@@ -3,6 +3,10 @@ import torch.nn as nn
 
 
 class CausalAttention(nn.Module):
+    """
+    Simple implementation of the causal attention mechanism.
+    Allows for trainable attention weights, masking, and dropout.
+    """
     def __init__(self, d_in, d_out, context_length, dropout, qkv_bias=False):
         super().__init__()
         self.d_out = d_out

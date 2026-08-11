@@ -5,6 +5,10 @@ from src.Attention.CausalAttention import CausalAttention
 
 
 class MultiHeadAttentionWrapper(nn.Module):
+    """
+    Simple wrapper around multiple causal attention layers.
+    Simply initializes multiple causal attention layers and concatenates their outputs.
+    """
     def __init__(self, d_in, d_out, context_length,
                  dropout, num_heads, qkv_bias=False):
         super().__init__()

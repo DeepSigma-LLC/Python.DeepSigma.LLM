@@ -2,6 +2,10 @@ import torch
 import torch.nn as nn
 
 class MultiHeadAttention(nn.Module):
+    """
+    Attention mechanism that allows for multiple attention heads.
+    Efficient implementation using matrix multiplication on all heads at once.
+    """
     def __init__(self, d_in, d_out, context_length, dropout, num_heads, qkv_bias=False):
         super().__init__()
         assert (d_out % num_heads == 0), \
