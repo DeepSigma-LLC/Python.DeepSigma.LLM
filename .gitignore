@@ -1,6 +1,8 @@
-# Ignoring model weights do to their size.
+# Ignoring model weights and data files do to their size.
 ModelWeights/
 gpt2/
+sms_spam_collection.zip
+sms_spam_collection/
 
 # Ignore all __pycache__ folders at any depth
 **/__pycache__/
