@@ -3,6 +3,7 @@ ModelWeights/
 gpt2/
 sms_spam_collection.zip
 sms_spam_collection/
+spam/
 
 # Ignore all __pycache__ folders at any depth
 **/__pycache__/
