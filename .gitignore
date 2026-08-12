@@ -1,0 +1,43 @@
+# Ignoring model weights do to their size.
+ModelWeights/
+
+# Ignore all __pycache__ folders at any depth
+**/__pycache__/
+
+# Ignore individual compiled Python files
+*.py[cod]
+*$py.class
+
+# Environment variables and secrets
+.env
+.env.secret
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
