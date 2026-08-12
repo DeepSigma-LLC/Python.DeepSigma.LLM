@@ -1,5 +1,6 @@
 # Ignoring model weights do to their size.
 ModelWeights/
+gpt2/
 
 # Ignore all __pycache__ folders at any depth
 **/__pycache__/
