@@ -1,5 +1,4 @@
 import os
-
 import requests
 import json
 import numpy as np
@@ -29,17 +28,17 @@ def download_and_load_gpt2(model_size, models_dir):
         file_url = os.path.join(base_url, model_size, filename)
         backup_url = os.path.join(backup_base_url, model_size, filename)
         file_path = os.path.join(model_dir, filename)
-        download_file(file_url, file_path, backup_url)
+        __download_file(file_url, file_path, backup_url)
 
     # Load settings and params
     tf_ckpt_path = tf.train.latest_checkpoint(model_dir)
     settings = json.load(open(os.path.join(model_dir, "hparams.json"), "r", encoding="utf-8"))
-    params = load_gpt2_params_from_tensorflow_ckpt(tf_ckpt_path, settings)
+    params = __load_gpt2_params_from_tensorflow_ckpt(tf_ckpt_path, settings)
 
     return settings, params
 
 
-def download_file(url, destination, backup_url=None):
+def __download_file(url, destination, backup_url=None):
     def _attempt_download(download_url):
         response = requests.get(download_url, stream=True, timeout=60)
         response.raise_for_status()
@@ -117,7 +116,7 @@ def download_file(url, destination):
 """
 
 
-def load_gpt2_params_from_tensorflow_ckpt(ckpt_path, settings):
+def __load_gpt2_params_from_tensorflow_ckpt(ckpt_path, settings):
     # Initialize parameters dictionary with empty blocks for each layer
     params = {"blocks": [{} for _ in range(settings["n_layer"])]}
 
